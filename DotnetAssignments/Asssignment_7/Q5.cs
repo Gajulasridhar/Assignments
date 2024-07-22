@@ -28,6 +28,10 @@ namespace Day5Tasks
             List<StudentDetails> studentDetailsList = new List<StudentDetails>();
 
             studentDetailsList.Add(new StudentDetails { Id = 112, Name = "Sai", Branch = "CSE" });
+            foreach (StudentDetails studentDetails in studentDetailsList)
+            {
+                Console.WriteLine(studentDetails);
+            }
         }
     }
 }
