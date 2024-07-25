@@ -1,0 +1,14 @@
+﻿@page
+@model MyFirstApplication.Pages.infoModel
+@{
+
+}
+<form method="post">
+<div class="container">
+        <h1 class="text-primary">Welcome to Asp.net Core Razor App!!!!</h1>
+        <h2>Todays Date & Time: @DateTime.Now</h2>
+        <h3>@Model.Message</h3>
+        <input type="submit" value="click" />
+    
+</div>
+</form>

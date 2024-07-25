@@ -1,0 +1,37 @@
+﻿@page
+@model MyFirstApplication.Pages.LoginPageModel
+@{
+}
+<div class="container">
+    <form method="post">
+        <h1>LOGIN PAGE DETAILS:</h1>
+        <table>
+            <tr>
+
+                <td>Enter Name </td>
+                <td> <input type="text" asp-for="@Model.Name" /></td>
+            </tr>
+            <tr>
+            <tr>
+
+                <td>Enter password </td>
+                <td> <input type="password" asp-for="@Model.Password" /></td>
+            </tr>
+            <tr>
+
+
+                <td colspan="2">
+                    <input type="submit" value="Login" />
+                </td>
+            </tr>
+            <tr>
+
+                <td colspan="2"> @Model.Message</td>
+            </tr>
+
+        </table>
+
+    </form>
+
+
+</div>
