@@ -1,0 +1,63 @@
+﻿@page
+@model WebApplication1.Pages.GetAllModel
+@{
+}
+<div class="container">
+    <form method="post">
+        <table class=" table ">
+            <tr>
+                <td>Id</td>
+                <td><input type="number" asp-for="@Model.Product.id"></input></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" asp-for="@Model.Product.name"></input></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input type="number" asp-for="@Model.Product.price"></input></td>
+            </tr>
+            <tr>
+                <td>Stock</td>
+                <td><input type="number" asp-for="@Model.Product.stock"></input></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="ADD"></input></td>
+            </tr>
+        </table>
+    </form>
+    <table class="table table-bordered">
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+         @foreach(var item in Model.Products)
+            {
+                <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.price</td>
+                <td>@item.stock</td>
+                </tr>
+            }
+
+
+
+
+        </tbody>
+
+
+
+
+
+
+
+
+    </table>
+</div>
