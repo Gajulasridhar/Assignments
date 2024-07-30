@@ -4,9 +4,9 @@
 }
 
 <h1>Details</h1>
+
 <div class="container">
-    @if (Model != null)
-    {
+   
         <div class="details-container">
             <p><strong>MovieID:</strong> @Model.MovieId</p>
             <p><strong>Title:</strong> @Model.Title</p>
@@ -14,11 +14,8 @@
             <p><strong>Language:</strong> $@Model.Language</p>
             <p><strong>Director:</strong> $@Model.Director</p>
         </div>
-    }
-    else
-    {
-        <h3>Movie is empty</h3>
-    }
+  
+   
 </div>
 
 <style>
