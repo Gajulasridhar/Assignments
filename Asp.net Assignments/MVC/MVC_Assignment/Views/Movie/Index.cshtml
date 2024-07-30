@@ -1,0 +1,90 @@
+﻿@model List<Movie>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    @if (Model != null && Model.Count > 0)
+    {
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>MovieId</th>
+                    <th>Title</th>
+                    <th>Actor</th>
+                    <th>Language</th>
+                    <th>Director</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.MovieId</td>
+                        <td>@item.Title</td>
+                        <td>@item.Actor</td>
+                        <td>@item.Language</td>
+                        <td>@item.Director</td>
+
+                        <td>
+                            <a class="details-link" asp-action="Details" asp-route-id="@item.Title">More details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h1>Movie list is empty</h1>
+    }
+</div>
+
+<style>
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 18px;
+        text-align: left;
+    }
+
+        .styled-table th, .styled-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    .details-link {
+        color: #009879;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .details-link:hover {
+            text-decoration: underline;
+        }
+</style>

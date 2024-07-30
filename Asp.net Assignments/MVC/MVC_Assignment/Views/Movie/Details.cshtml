@@ -1,0 +1,55 @@
+﻿@model Movie
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<div class="container">
+    @if (Model != null)
+    {
+        <div class="details-container">
+            <p><strong>MovieID:</strong> @Model.MovieId</p>
+            <p><strong>Title:</strong> @Model.Title</p>
+            <p><strong>Actor:</strong> @Model.Actor</p>
+            <p><strong>Language:</strong> $@Model.Language</p>
+            <p><strong>Director:</strong> $@Model.Director</p>
+        </div>
+    }
+    else
+    {
+        <h3>Movie is empty</h3>
+    }
+</div>
+
+<style>
+    .container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .details-container {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .details-container p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+            .details-container p strong {
+                color: #333;
+            }
+
+    h1, h3 {
+        text-align: center;
+        color: #333;
+    }
+</style>
